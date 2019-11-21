@@ -24,7 +24,5 @@ EXPOSE 3000
 
 CMD ["node"]
 
-
-# nohup docker build -t helionmendanha/docker_node_oci:latest . &
-# docker run --rm -it -v /root/app_oni_api:/app/bundle -p 3001:3000 -w /app/bundle helionmendanha/docker_node_oci:latest bash
-
+# nohup docker build -t helionmendanha/docker_node_oci:v12.13.1 . &
+# docker run --rm -it -v /root/app_oni_api:/app/bundle -p 3001:3000 -w /app/bundle helionmendanha/docker_node_oci:v12.13.1 bash
