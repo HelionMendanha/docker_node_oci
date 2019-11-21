@@ -6,7 +6,7 @@ ADD files/instantclient-basic-linux.x64-19.3.0.0.0dbru.zip /opt
 
 RUN apt-get update \
 	&& echo "America/Sao_Paulo" | tee /etc/timezone \
-	&& apt-get install -y zip build-essential ca-certificates curl dirmngr apt-transport-https lsb-release \
+	&& apt-get install -y zip build-essential ca-certificates curl dirmngr apt-transport-https lsb-release libaio1 \
 	&& curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 	&& mkdir -p /opt/oracle \
 	&& unzip /opt/instantclient-basic-linux.x64-19.3.0.0.0dbru.zip -d /opt/oracle \
@@ -25,6 +25,6 @@ EXPOSE 3000
 CMD ["node"]
 
 
-# nohup docker build -t helionmendanha/node:12.10.0 . &
-# docker run --rm -it -v /root/app_oni_api:/app/bundle -p 3001:3000 -w /app/bundle helionmendanha/node:12.10.0 bash
+# nohup docker build -t helionmendanha/docker_node_oci:latest . &
+# docker run --rm -it -v /root/app_oni_api:/app/bundle -p 3001:3000 -w /app/bundle helionmendanha/docker_node_oci:latest bash
 
