@@ -16,6 +16,8 @@ RUN apt-get update \
 	&& apt-get install -y nodejs \
 	&& node --version \
 	&& npm --version \
+	&& npm install -g pm2 \
+	&& pm2 list \
 	&& date
 
 WORKDIR /app/bundle
